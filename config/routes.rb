@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   #define root, se chamar no nome do site irá para esse controller e pagina
   root 'demo#index'
-  get 'demo/index'
+  #get 'demo/index'
   #default route
   #may go away in future versions of Rails
   #get ':controller(/:action(/:id))'
