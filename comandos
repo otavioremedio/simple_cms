@@ -1,0 +1,29 @@
+criar projetos
+rails new nomedoprojeto -d mysql
+
+criar banco mysql
+create database nomedabase; (uma pra desenv e outra pra teste)
+grant all privileges on nomedabase.* to 'usuario'@'servidor' identified by 'senha';
+alterar database.yml
+rails db:schema:dump
+
+subir servidor
+rails server
+rails s
+
+parar servidor
+ctrl c
+
+gerar controller e view
+rails generate controller nomecontroller nomepagina
+
+gerar migração
+rails generate migration nomedamigracao
+
+gerar modelo
+rails generate model nomedomodelo
+
+
+
+
+
