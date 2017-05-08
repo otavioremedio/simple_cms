@@ -23,7 +23,14 @@ rails generate migration nomedamigracao
 gerar modelo
 rails generate model nomedomodelo
 
+fazer a migração
+rails db:migrate
 
+voltar a versão de banco
+rails db:migrate VERSION=0
 
+mostra o status da migração
+rails db:migrate:status
 
-
+executar uma migração definida
+rails db:migrate VERSION=20170505120648
