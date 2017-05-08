@@ -34,3 +34,28 @@ rails db:migrate:status
 
 executar uma migração definida
 rails db:migrate VERSION=20170505120648
+
+comandos banco tabela
+create_table (table, options) do |t|
+    colimns
+end
+drop_table(table)
+rename_table(table, new_name)
+
+comandos migração colunas
+add_column(table, column, type, options)
+remove_column(table, column)
+rename_column(table, columnm, new_name)
+change_column(table, column, type, options)
+
+comandos migração indices
+add_index(table, column, options)
+remove_index(table, column)
+:unique => true/false
+:name => "your_custom_name"
+
+
+
+
+
+
