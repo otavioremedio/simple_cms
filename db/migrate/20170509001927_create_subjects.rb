@@ -6,7 +6,7 @@ class CreateSubjects < ActiveRecord::Migration[5.0]
       t.boolean "visible", :default => false
       t.timestamps
     end
-    add_index("subjects","id")
+    #add_index("subjects","id")
   end
 
   def down

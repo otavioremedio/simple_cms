@@ -9,8 +9,9 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.timestamps
     end
     #add_reference :pages, :subject, index: true
-    add_foreign_key :pages, :subjects
+    #add_foreign_key :pages, :subjects
     add_index("pages","subject_id")
+    add_index("pages","permalink")
   end
 
   def down

@@ -10,7 +10,7 @@ class CreateSections < ActiveRecord::Migration[5.0]
       t.timestamps
     end
     #add_reference :sections, :pages, index: true
-    add_foreign_key :sections, :pages
+    #add_foreign_key :sections, :pages
     add_index("sections","page_id")
   end
 
