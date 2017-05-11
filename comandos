@@ -55,7 +55,8 @@ remove_index(table, column)
 :name => "your_custom_name"
 
 
-
+comando insert direto
+objeto.create(args)
 
 
 

@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170509002008) do
     t.boolean  "visible",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["permalink"], name: "index_pages_on_permalink", using: :btree
     t.index ["subject_id"], name: "index_pages_on_subject_id", using: :btree
   end
 
@@ -52,9 +53,6 @@ ActiveRecord::Schema.define(version: 20170509002008) do
     t.boolean  "visible",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["id"], name: "index_subjects_on_id", using: :btree
   end
 
-  add_foreign_key "pages", "subjects"
-  add_foreign_key "sections", "pages"
 end
