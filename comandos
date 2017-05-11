@@ -59,4 +59,34 @@ comando insert direto
 objeto.create(args)
 
 
+comando update
+objeto.find(id)
+objeto.atributo = xxxxxx
+objeto.save
+
+comando update 2
+objeto.find(id)
+objeto.update_attributes()
+
+
+comando deelete
+objeto.find(id)
+#destroy é melhor que delete
+
+comando para selecionar
+objeto.find(pk)
+
+#dinamico
+objeto.find_by_id(n)
+objeto.find_by_name("nome")
+
+#todos
+objeto.all
+
+objeto.first
+objeto.last
+
+retorna nulo ou objeto
+
+
 
