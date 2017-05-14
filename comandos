@@ -1,79 +1,79 @@
-criar projetos
+#criar projetos
 rails new nomedoprojeto -d mysql
 
-criar banco mysql
+#criar banco mysql
 create database nomedabase; (uma pra desenv e outra pra teste)
 grant all privileges on nomedabase.* to 'usuario'@'servidor' identified by 'senha';
 alterar database.yml
 rails db:schema:dump
 
-subir servidor
+#subir servidor
 rails server
 rails s
 
-parar servidor
+#parar servidor
 ctrl c
 
-gerar controller e view
+#gerar controller e view
 rails generate controller nomecontroller nomepagina
 
-gerar migração
+#gerar migração
 rails generate migration nomedamigracao
 
-gerar modelo
+#gerar modelo
 rails generate model nomedomodelo
 
-fazer a migração
+#fazer a migração
 rails db:migrate
 
-voltar a versão de banco
+#voltar a versão de banco
 rails db:migrate VERSION=0
 
-mostra o status da migração
+#mostra o status da migração
 rails db:migrate:status
 
-executar uma migração definida
+#executar uma migração definida
 rails db:migrate VERSION=20170505120648
 
-comandos banco tabela
+#comandos banco tabela
 create_table (table, options) do |t|
     colimns
 end
 drop_table(table)
 rename_table(table, new_name)
 
-comandos migração colunas
+#comandos migração colunas
 add_column(table, column, type, options)
 remove_column(table, column)
 rename_column(table, columnm, new_name)
 change_column(table, column, type, options)
 
-comandos migração indices
+#comandos migração indices
 add_index(table, column, options)
 remove_index(table, column)
 :unique => true/false
 :name => "your_custom_name"
 
 
-comando insert direto
+#comando insert direto
 objeto.create(args)
 
 
-comando update
+#comando update
 objeto.find(id)
 objeto.atributo = xxxxxx
 objeto.save
 
-comando update 2
+#comando update 2
 objeto.find(id)
 objeto.update_attributes()
 
 
-comando deelete
+#comando deelete
 objeto.find(id)
-#destroy é melhor que delete
+--destroy é melhor que delete
 
-comando para selecionar
+#comando para selecionar
 objeto.find(pk)
 
 #dinamico
@@ -82,11 +82,22 @@ objeto.find_by_name("nome")
 
 #todos
 objeto.all
-
 objeto.first
 objeto.last
 
 retorna nulo ou objeto
+
+#saber o sql
+array.to_sql
+
+#formas de consulta
+subjects = Subject.where(:visible => true)
+subjects = Subject.where(["visible = ?", true])
+subjects = Subject.where("visible = true") --n recomenda sql injection
+subjects = Subject.where(:position => 1).where(:name => "S1")
+subjects = Subject.where(:position => 1, :name => "S1")
+
+
 
 
 
