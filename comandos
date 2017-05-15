@@ -96,6 +96,16 @@ subjects = Subject.where(["visible = ?", true])
 subjects = Subject.where("visible = true") --n recomenda sql injection
 subjects = Subject.where(:position => 1).where(:name => "S1")
 subjects = Subject.where(:position => 1, :name => "S1")
+subjects = Subject.order(:position).limit(20).offset(40)
+subjects = Subject.order(:position => :asc)
+subjects = Subject.limit(1)
+#offset pula 1
+subjects = Subject.limit(1).offset(1)
+
+#named scopes
+queries definidas no modelo
+aceita parametros
+lambda
 
 
 
