@@ -54,6 +54,8 @@ remove_index(table, column)
 :unique => true/false
 :name => "your_custom_name"
 
+#comando criar objeto
+objeto.new(params)
 
 #comando insert direto
 objeto.create(args)
@@ -108,6 +110,24 @@ aceita parametros
 lambda
 
 
+#1:1 associação
+objeto tem uma
+has_one :page
 
+objeto pertence a uma
+belongs_to :subject
+
+#1:n associação
+objeto tem varias
+has_many :pageS
+
+objeto pertence a uma
+belongs_to :subject
+
+#verificar erro ao inserir
+objeto.errors.full_messages
+
+
+#m:m associação
 
 
