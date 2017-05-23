@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520142302) do
+ActiveRecord::Schema.define(version: 20170523133306) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      limit: 25
@@ -37,7 +37,17 @@ ActiveRecord::Schema.define(version: 20170520142302) do
     t.boolean  "visible",                default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.index ["permalink"], name: "index_pages_on_permalink", using: :btree
     t.index ["subject_id"], name: "index_pages_on_subject_id", using: :btree
+  end
+
+  create_table "section_edits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "admin_user_id"
+    t.integer  "section_id"
+    t.string   "summary"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["admin_user_id", "section_id"], name: "index_section_edits_on_admin_user_id_and_section_id", using: :btree
   end
 
   create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -58,9 +68,6 @@ ActiveRecord::Schema.define(version: 20170520142302) do
     t.boolean  "visible",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["id"], name: "index_subjects_on_id", using: :btree
   end
 
-  add_foreign_key "pages", "subjects"
-  add_foreign_key "sections", "pages"
 end

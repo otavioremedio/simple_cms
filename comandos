@@ -130,4 +130,19 @@ objeto.errors.full_messages
 
 #m:m associação
 
+modelo associativo simples, depois de criar tabela assoiativa
+colocar os comandos nos modelos envolvidos
+has_and_belongs_to_many :pages
+has_and_belongs_to_many :admin_users
+
+modelo associativo complexo
+criar modelo associativo e adicionar os comandos
+belongs_to :admin_user
+belongs_to :section
+
+e nos modelos envolvidos
+has_many :section_edits
+
+#reload do objeto
+obj.section_edits(true)
 
